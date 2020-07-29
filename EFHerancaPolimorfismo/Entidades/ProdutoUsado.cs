@@ -11,9 +11,9 @@ namespace EFHerancaPolimorfismo.Entidades
         {
         }
 
-        public ProdutoUsado(string nome, double preco, DateTime dataDeFabricação) : base (nome, preco)
+        public ProdutoUsado(string nome, double preco, DateTime dataDeFabricacao) : base (nome, preco)
         {
-            DataDeFabricacao = dataDeFabricação;
+            DataDeFabricacao = dataDeFabricacao;
         }
 
         public override string Etiqueta()

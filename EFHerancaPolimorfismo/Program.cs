@@ -27,16 +27,28 @@ namespace EFHerancaPolimorfismo
                 {
                     lista.Add(new Produto(nome, preco));
                 }
-                if (tipo == 'u')
+                else if (tipo == 'u')
                 {
-                    Console.WriteLine("Data da fabricação (DD/MM/AAAA: ");
-                    DateTime date = DateTime.Parse(Console.ReadLine());
-
+                    Console.Write("Data da fabricação (DD/MM/AAAA): ");
+                    DateTime data = DateTime.Parse(Console.ReadLine());
+                    lista.Add(new ProdutoUsado(nome, preco, data));
+                }
+                else
+                {
+                    Console.Write("Informe os custos alfandegarios: ");
+                    double alfandega = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    lista.Add(new ProdutoImportado(nome, preco, alfandega));
                 }
 
-                
-
             }
+            Console.WriteLine();
+            Console.WriteLine("Etiqueta de preco: ");
+
+            foreach ( Produto produto in lista)
+            {
+                Console.WriteLine(produto.Etiqueta());
+            }
+
         }
     }
 }
